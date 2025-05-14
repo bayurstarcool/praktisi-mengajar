@@ -1,0 +1,19 @@
+<header th:fragment="header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Sistem Pendaftaran Mahasiswa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div th:if="${session.loggedInUser}" class="d-flex">
+                    <span class="navbar-text me-3">
+                        <i class="bi bi-person-circle"></i>
+                        <span th:text="${session.loggedInUser}">Username</span>
+                    </span>
+                    <a href="/auth/logout" class="btn btn-outline-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
